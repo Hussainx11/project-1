@@ -1,2 +1,2 @@
-# project-1
+# project-1 obstacle course
 this is my first project
