@@ -4,8 +4,6 @@ Date: 06/09/2023
 
 By: Husain Matar
 
-[Instagram](https://instagram.com/hussainx11?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D)
-[TikTok](https://www.tiktok.com/@husainx11?_t=8fDVHIkWg8Q&_r=1)
 ***
 Description
 
@@ -25,9 +23,9 @@ Technologies
 
 ***
 
-- [ ] start the planning 
-- [ ] create a wireframe
-- [ ] create a trello task list
+- [x] start the planning 
+- [x] create a wireframe
+- [x] create a trello task list
 - [ ] start coding
 
 ***
