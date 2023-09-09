@@ -38,6 +38,6 @@ Technologies used:
 
 ***
 
-[trello](https://trello.com/invite/b/oAm1XgDu/ATTI54f53f3477b0b07376973155d378f23fE15EBCDB/project-1)
+ * [trello](https://trello.com/invite/b/oAm1XgDu/ATTI54f53f3477b0b07376973155d378f23fE15EBCDB/project-1)
 
-[wireframe](https://drive.google.com/file/d/13m7P5kAE4c0DyIlqnLipA4ll_yS1GPzU/view?usp=drive_link) 
+* [wireframe](https://drive.google.com/file/d/13m7P5kAE4c0DyIlqnLipA4ll_yS1GPzU/view?usp=drive_link) 
