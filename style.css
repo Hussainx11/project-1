@@ -24,3 +24,16 @@ body{
   bottom: 100px;
   right: calc(100% - 100 px);
 }
+.obstacle{
+  height: 100px;
+  width: 30px;
+  background-color: blue;
+  position: absolute;
+  bottom: 100px;
+  right: 0;
+}
+h2{
+  font-family: sans-serif;
+  margin-top: 10px;
+  margin-left: 10px;
+}

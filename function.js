@@ -20,6 +20,8 @@ let floorHeight = parseInt(
 let jumping = false
 let uptime
 let downTime
+let displayScore = document.getElementById('score')
+let score = 0
 
 function jump() {
   if (jumping) return
@@ -42,10 +44,48 @@ function jump() {
   }, 20)
 }
 
+function showscore() {
+  score++
+  displayScore.innerText = score
+}
+
+setInterval(showScore, 100)
+
 function createObstacle() {
-  let obstacles = document.querySelector('.obstacle')
+  let obstacles = document.querySelector('.obstacles')
   let obstacle = document.createElement('div')
   obstacle.setAttribute('class', 'obstacle')
+  obstacles.appendChild(obstacle)
+
+  let randomTimeout = Math.floor(Math.random() * 1000) + 1000
+  let obstacleRight = -30
+  let obstacleBottom = 100
+  let obstacleWidth = 30
+  let obstacleHeight = Math.floor(Math.random() * 50) + 50
+  obstacle.style.backgroundColor = `rgb(${Math.floor(
+    Math.random() * 255
+  )}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)},)`
+
+  function moveObstacle() {
+    obstacleRight += 5
+    obstacle.style.right = obstacleRight + 'px'
+    obstacle.style.bottom = obstacleBottom + 'px'
+    obstacle.style.width = obstacleWidth + 'px'
+    obstacle.style.height = obstacleHeight + 'px'
+    if (
+      playerRight >= obstacleRight - playerWidth &&
+      playerRight <= obstacleRight + obstacleWidth &&
+      playerBottom <= obstacleBottom + obstacleHeight
+    ) {
+      alert('Game over! Your final score is: ' + score)
+      clearInterval(obstacleInterval)
+      clearTimeout(obstacleTimeout)
+      location.reload()
+    }
+  }
+
+  let obstacleInterval = setInterval(moveObstacle, 20)
+  let obstacleTimeout = setTimeout(createObstacle, randomTimeout)
 }
 
 function AbortController(p) {
