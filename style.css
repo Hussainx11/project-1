@@ -1,3 +1,22 @@
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inconsolata', monospace;
+  background-color: #111;
+}
+a {
+  border: 1px solid black;
+  border-radius: 30px;
+  background-color: red;
+  color: white;
+  padding: 8px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+}
+
 *{
   margin: 0;
   padding: 0;
