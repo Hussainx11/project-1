@@ -8,9 +8,12 @@ let playerRight = parseInt(
 let playerWidth = parseInt(
   window.getComputedStyle(player).getPropertyValue('width')
 )
+let playerHeight = parseInt(
+  window.getComputedStyle(player).getPropertyValue('height')
+)
 
 let floor = document.getElementById('floor')
-let floorBottom = pparseInt(
+let floorBottom = parseInt(
   window.getComputedStyle(floor).getPropertyValue('bottom')
 )
 let floorHeight = parseInt(
@@ -25,26 +28,31 @@ let score = 0
 
 function jump() {
   if (jumping) return
-  uptime = setInterval(() => {
-    if (playerBottom >= floorHeight + 250) {
-      clearInterval(uptime)
+  let jumpCount = 0
+  let jumpInterval = setInterval(() => {
+    let jumpHeight = 150
+    let gravity = 4
+
+    if (jumpCount >= jumpHeight) {
+      clearInterval(jumpInterval)
       downTime = setInterval(() => {
-        if (playerBottom <= playerHeight + 10) {
+        if (playerBottom <= floorHeight + 10) {
           clearInterval(downTime)
           jumping = false
         }
-        playerBottom -= 10
+        playerBottom -= gravity
         player.style.bottom = playerBottom + 'px'
         jumping = true
       }, 20)
     }
-    playerBottom += 10
+    playerBottom += gravity
     player.style.bottom = playerBottom + 'px'
+    jumpCount += gravity
     jumping = true
   }, 20)
 }
 
-function showscore() {
+function showScore() {
   score++
   displayScore.innerText = score
 }
@@ -70,15 +78,13 @@ function createObstacle() {
     obstacle.style.bottom = obstacleBottom + 'px'
     obstacle.style.width = obstacleWidth + 'px'
     obstacle.style.height = obstacleHeight + 'px'
+
     if (
       playerRight >= obstacleRight - playerWidth &&
       playerRight <= obstacleRight + obstacleWidth &&
       playerBottom <= obstacleBottom + obstacleHeight
     ) {
-      alert('Game over! Your final score is: ' + score)
-      clearInterval(obstacleInterval)
-      clearTimeout(obstacleTimeout)
-      location.reload()
+      gameOver()
     }
   }
 
@@ -86,56 +92,19 @@ function createObstacle() {
   let obstacleTimeout = setTimeout(createObstacle, randomTimeout)
 }
 
-function AbortController(p) {
-  if (p.key == 'spaceBar' || p.key == 'spaceBar') {
+function gameOver() {
+  clearInterval(obstacleInterval)
+  clearTimeout(obstacleTimeout)
+  alert('Game over! Your final score is: ' + score)
+  location.reload()
+}
+
+function control(event) {
+  if (event.key === ' ' || event.key === 'Spacebar') {
     jump()
   }
 }
 
 document.addEventListener('keydown', control)
 
-const newAl = document.createElement('h2')
-newAl.innerText = 'Game over! Your final score is: ' + score
-const newAp = document.createElement('h3')
-newAp.innertext = 'you passed a milestone level increase'
-
-function moveObstacle() {
-  obstacleRight += 5
-  obstacle.style.right = obstacleRight + 'px'
-  obstacle.style.bottom = obstacleBottom + 'px'
-  obstacle.style.width = obstacleWidth + 'px'
-  obstacle.style.height = obstacleHeight + 'px'
-  if (
-    playerRight >= obstacleRight - playerWidth &&
-    playerRight <= obstacleRight + obstacleWidth &&
-    playerBottom <= obstacleBottom + obstacleHeight
-  ) {
-    alert('Game over! your final score is: ' + score)
-    clearInterval(obstacleInterval)
-    clearTimeout(obstacleTimeout)
-    location.reload()
-  }
-}
-
-// const newAl = document.createElement('h3')
-// newAl.innerText = 'Game over! your final score is: ' + score
-// const newAp = document.createElement('h3')
-// newAp.innertext = 'you passed a milestone, level increase'
-
-function moveObstacle() {
-  obstacleLeft -= 5
-  obstacle.style.left = obstacleLeft + 'px'
-  obstacle.style.top = obstacleTop + 'px'
-  obstacle.style.height = obstacleheight + 'px'
-  obstacle.style.width = obstacleWidth + 'px'
-  if (
-    playerLeft >= obstacleLeft - playerWidth &&
-    playerLeft <= obstacleLeft + obstacleWidth &&
-    playerBottom <= obstacleBottom + obstacleHeight
-  ) {
-    alert('Game over! your final score is: ' + score)
-    clearInterval(obstacleInterval)
-    clearTimeout(obstacleTimeout)
-    location.reload()
-  }
-}
+createObstacle()
