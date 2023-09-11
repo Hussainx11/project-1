@@ -62,9 +62,7 @@ function createObstacle() {
   let obstacleBottom = 100
   let obstacleWidth = 30
   let obstacleHeight = Math.floor(Math.random() * 50) + 50
-  obstacle.style.backgroundColor = `rgb(${Math.floor(
-    Math.random() * 255
-  )}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)},)`
+  obstacle.style.backgroundColor = 'black'
 
   function moveObstacle() {
     obstacleRight += 5

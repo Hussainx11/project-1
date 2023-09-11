@@ -20,13 +20,15 @@ Technologies
 
    * NODE JS
 
+* GOOGLE FONTS
+
 
 ***
 
 - [x] start the planning 
 - [x] create a wireframe
 - [x] create a trello task list
-- [ ] start coding
+- [x] start coding
 
 ***
 
@@ -35,6 +37,8 @@ Technologies used:
 * [VS CODE](https://code.visualstudio.com/)
 
 * [GITHUB](https://github.com/)
+
+* [GOOGLE FONTS](https://g.co/kgs/w1wSKZ)
 
 ***
 
