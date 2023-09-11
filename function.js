@@ -98,3 +98,44 @@ const newAl = document.createElement('h2')
 newAl.innerText = 'Game over! Your final score is: ' + score
 const newAp = document.createElement('h3')
 newAp.innertext = 'you passed a milestone level increase'
+
+function moveObstacle() {
+  obstacleRight += 5
+  obstacle.style.right = obstacleRight + 'px'
+  obstacle.style.bottom = obstacleBottom + 'px'
+  obstacle.style.width = obstacleWidth + 'px'
+  obstacle.style.height = obstacleHeight + 'px'
+  if (
+    playerRight >= obstacleRight - playerWidth &&
+    playerRight <= obstacleRight + obstacleWidth &&
+    playerBottom <= obstacleBottom + obstacleHeight
+  ) {
+    alert('Game over! your final score is: ' + score)
+    clearInterval(obstacleInterval)
+    clearTimeout(obstacleTimeout)
+    location.reload()
+  }
+}
+
+// const newAl = document.createElement('h3')
+// newAl.innerText = 'Game over! your final score is: ' + score
+// const newAp = document.createElement('h3')
+// newAp.innertext = 'you passed a milestone, level increase'
+
+function moveObstacle() {
+  obstacleLeft -= 5
+  obstacle.style.left = obstacleLeft + 'px'
+  obstacle.style.top = obstacleTop + 'px'
+  obstacle.style.height = obstacleheight + 'px'
+  obstacle.style.width = obstacleWidth + 'px'
+  if (
+    playerLeft >= obstacleLeft - playerWidth &&
+    playerLeft <= obstacleLeft + obstacleWidth &&
+    playerBottom <= obstacleBottom + obstacleHeight
+  ) {
+    alert('Game over! your final score is: ' + score)
+    clearInterval(obstacleInterval)
+    clearTimeout(obstacleTimeout)
+    location.reload()
+  }
+}
