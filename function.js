@@ -62,7 +62,7 @@ function createObstacle() {
   let obstacleBottom = 100
   let obstacleWidth = 30
   let obstacleHeight = Math.floor(Math.random() * 50) + 50
-  obstacle.style.backgroundColor = 'black'
+  obstacle.style.backgroundColor = 'blue'
 
   function moveObstacle() {
     obstacleRight += 5
@@ -93,3 +93,8 @@ function AbortController(p) {
 }
 
 document.addEventListener('keydown', control)
+
+const newAl = document.createElement('h2')
+newAl.innerText = 'Game over! Your final score is: ' + score
+const newAp = document.createElement('h3')
+newAp.innertext = 'you passed a milestone level increase'
