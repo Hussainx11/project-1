@@ -89,7 +89,7 @@ function createObstacle() {
 }
 
 function AbortController(p) {
-  if (p.key == 'spaceBar' || p.key == ' ') {
+  if (p.key == 'spaceBar' || p.key == 'spaceBar') {
     jump()
   }
 }
