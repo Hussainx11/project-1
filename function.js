@@ -30,8 +30,8 @@ function jump() {
   if (jumping) return
   let jumpCount = 0
   let jumpInterval = setInterval(() => {
-    let jumpHeight = 150
-    let gravity = 4
+    let jumpHeight = 160
+    let gravity = 8
 
     if (jumpCount >= jumpHeight) {
       clearInterval(jumpInterval)
