@@ -21,34 +21,33 @@ let floorHeight = parseInt(
 )
 
 let jumping = false
-let uptime
-let downTime
+let jumpCount = 0
+let maxJumpCount = 170
+let gravity = 7
 let displayScore = document.getElementById('score')
 let score = 0
 
 function jump() {
   if (jumping) return
-  let jumpCount = 0
-  let jumpInterval = setInterval(() => {
-    let jumpHeight = 160
-    let gravity = 8
+  jumping = true
 
-    if (jumpCount >= jumpHeight) {
+  let jumpInterval = setInterval(() => {
+    if (jumpCount >= maxJumpCount) {
       clearInterval(jumpInterval)
+      jumpCount = 0
       downTime = setInterval(() => {
-        if (playerBottom <= floorHeight + 10) {
+        if (playerBottom <= floorHeight) {
           clearInterval(downTime)
           jumping = false
+          playerBottom = floorHeight
         }
         playerBottom -= gravity
         player.style.bottom = playerBottom + 'px'
-        jumping = true
       }, 20)
     }
     playerBottom += gravity
     player.style.bottom = playerBottom + 'px'
     jumpCount += gravity
-    jumping = true
   }, 20)
 }
 
@@ -100,7 +99,7 @@ function gameOver() {
 }
 
 function control(event) {
-  if (event.key === ' ' || event.key === 'Spacebar') {
+  if (event.code === 'Space') {
     jump()
   }
 }
