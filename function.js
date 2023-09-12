@@ -69,7 +69,14 @@ function createObstacle() {
   let obstacleBottom = 100
   let obstacleWidth = 30
   let obstacleHeight = Math.floor(Math.random() * 50) + 50
-  obstacle.style.backgroundColor = 'blue'
+  obstacle.style.backgroundColor = 'brightblue'
+
+  function gameOver() {
+    clearInterval(obstacleInterval)
+    clearTimeout(obstacleTimeout)
+    alert('Game over! Your final score is: ' + score)
+    location.reload()
+  }
 
   function moveObstacle() {
     obstacleRight += 5
@@ -89,13 +96,6 @@ function createObstacle() {
 
   let obstacleInterval = setInterval(moveObstacle, 20)
   let obstacleTimeout = setTimeout(createObstacle, randomTimeout)
-}
-
-function gameOver() {
-  clearInterval(obstacleInterval)
-  clearTimeout(obstacleTimeout)
-  alert('Game over! Your final score is: ' + score)
-  location.reload()
 }
 
 function control(event) {

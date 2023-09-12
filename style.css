@@ -47,7 +47,7 @@ body{
 #player{
   height: 40px;
   width: 30px;
-  background-color: black;
+  background-color: gold;
   border-radius: 25%;
   position: absolute;
   bottom: 100px;
@@ -56,11 +56,11 @@ body{
 .obstacle{
   height: 100px;
   width: 30px;
-  background-color: blue;
+  background-color: black;
   position: absolute;
   bottom: 100px;
   right: 0;
-  border-radius: 15px;
+  border-radius: 5px;
 }
 h2{
   margin-top: 35px;
