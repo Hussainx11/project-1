@@ -1,13 +1,21 @@
-# project-1 stickman obstacle course
+# project-1 Obstacle Run
 
 Date: 06/09/2023
 
 By: Husain Matar
 
 ***
+My Games home page.
+
+![Image](https://ibb.co/fp0rq97)
+
+***
 Description
 
-This project going to be an obstacle course type of game that is styled in the old stick man gams that we used to enjoy playing, it was inspired by the google dinosaur game that you can play when you have no internet connection.
+This project going to be an obstacle course/run type of game constructed completely with javascript,html and css, it was inspired by the google chrome dinosaur game that you can play when you have no internet connection.
+
+***
+Gameplay
 
 ***
 Technologies
@@ -22,13 +30,8 @@ Technologies
 
 * GOOGLE FONTS
 
+* GOOGLE IMAGES
 
-***
-
-- [x] start the planning 
-- [x] create a wireframe
-- [x] create a trello task list
-- [x] start coding
 
 ***
 
