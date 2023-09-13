@@ -20,11 +20,14 @@ let floorHeight = parseInt(
   window.getComputedStyle(floor).getPropertyValue('height')
 )
 
+let gameEnd = false
 let jumping = false
 let jumpCount = 0
 let maxJumpCount = 170
 let gravity = 7
 let displayScore = document.getElementById('score')
+let displayGameOver = document.getElementById('Gameover')
+let displayGameOverMessage = document.getElementById('gameOverMessage')
 let score = 0
 
 function jump() {
@@ -52,8 +55,10 @@ function jump() {
 }
 
 function showScore() {
-  score++
-  displayScore.innerText = score
+  if (!gameEnd) {
+    score++
+    displayScore.innerText = score
+  }
 }
 
 setInterval(showScore, 100)
@@ -72,25 +77,29 @@ function createObstacle() {
   obstacle.style.backgroundColor = 'brightblue'
 
   function gameOver() {
+    gameEnd = true
     clearInterval(obstacleInterval)
     clearTimeout(obstacleTimeout)
-    alert('Game over! Your final score is: ' + score)
-    location.reload()
+    displayGameOverMessage.innerText = 'Your final score is: ' + score
+    displayGameOver.style.opacity = '1'
+    displayGameOver.style.zIndex = '1'
   }
 
   function moveObstacle() {
-    obstacleRight += 5
-    obstacle.style.right = obstacleRight + 'px'
-    obstacle.style.bottom = obstacleBottom + 'px'
-    obstacle.style.width = obstacleWidth + 'px'
-    obstacle.style.height = obstacleHeight + 'px'
+    if (!gameEnd) {
+      obstacleRight += 5
+      obstacle.style.right = obstacleRight + 'px'
+      obstacle.style.bottom = obstacleBottom + 'px'
+      obstacle.style.width = obstacleWidth + 'px'
+      obstacle.style.height = obstacleHeight + 'px'
 
-    if (
-      playerRight >= obstacleRight - playerWidth &&
-      playerRight <= obstacleRight + obstacleWidth &&
-      playerBottom <= obstacleBottom + obstacleHeight
-    ) {
-      gameOver()
+      if (
+        playerRight >= obstacleRight - playerWidth &&
+        playerRight <= obstacleRight + obstacleWidth &&
+        playerBottom <= obstacleBottom + obstacleHeight
+      ) {
+        gameOver()
+      }
     }
   }
 

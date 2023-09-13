@@ -7,7 +7,7 @@ By: Husain Matar
 ***
 My Games home page.
 
-![Image](https://ibb.co/fp0rq97)
+![Gif](https://ibb.co/fp0rq97)
 
 ***
 Description
