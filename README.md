@@ -6,8 +6,7 @@ By: Husain Matar
 
 ***
 My Games home page.
-
-![Gif](https://ibb.co/fp0rq97)
+![Homepage](<images/project 1 homepage.gif>)
 
 ***
 Description
@@ -16,6 +15,8 @@ This project going to be an obstacle course/run type of game constructed complet
 
 ***
 Gameplay
+
+![Gamepage](<images/gameplay gif.gif>)
 
 ***
 Technologies
@@ -42,6 +43,23 @@ Technologies used:
 * [GITHUB](https://github.com/)
 
 * [GOOGLE FONTS](https://g.co/kgs/w1wSKZ)
+***
+Credits:
+
+* [W3schools](https://www.w3schools.com/)
+    * Helped me with functions that I didn't know how to write.
+
+* [Wallpaperaccess](https://wallpaperaccess.com/)
+    * I got the Gif I used for my game from here. 
+
+* [PixelCharacter](https://itch.io/profile/fatberry)
+    * I got my player character from Fat Berrys profile at "itch.io".
+
+* [Audio](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=68698)
+    * I got the track for my main page from Pixabay.
+
+* [GameAudio](https://pixabay.com/users/qubesounds-24397640/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=122074)
+    * Music by QubeSounds from pixabay.
 
 ***
 
